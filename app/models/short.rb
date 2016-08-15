@@ -1,12 +1,12 @@
 class Short < ActiveRecord::Base
-	attr_accessible :long, :desc
+	attr_accessible :long, :short
 	validates :long, presence: true,
 	:format => {
 	:with => %r{^http://},
 	:multiline => true,
-	:message => "Only HTTP links allowed!"  #No relative URLs, no file:// URLs, or even shell: URLs
+	:message => "Only HTTP links allowed!", #No relative URLs, no file:// URLs, or even shell: URLs
+	:uniqueness => true 
 	}
-	#desc on displayed on page dd isnt stored in db
 
 	#to not use id upon genrating in db, change to base 36
 	def to_param

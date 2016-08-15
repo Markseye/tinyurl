@@ -4,11 +4,11 @@
 
 <p>The new short URL is <%= link_to short_url(@short), short_url(@short) %>.</p>
 
-<p>The URL leads to <%= link_to @short.long, @short.long %>.</p>
+<p>The URL leads to <%= link_to @long.long, @long.long %>.</p>
 
 <p><%= link_to 'Shorten another URL', new_short_path %></p>
 
 <p>
   <strong>Long:</strong>
-  <%= @short.long %>
+  <%= @long.long %>
 </p>

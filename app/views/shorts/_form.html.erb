@@ -1,10 +1,10 @@
-<%= form_for(@short) do |f| %>
-  <% if @short.errors.any? %>
+<%= form_for(@long) do |f| %>
+  <% if @long.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@short.errors.count, "error") %> prohibited this short from being saved:</h2>
+      <h2><%= pluralize(@long.errors.count, "error") %> prohibited this short from being saved:</h2>
 
       <ul>
-      <% @short.errors.full_messages.each do |message| %>
+      <% @long.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
