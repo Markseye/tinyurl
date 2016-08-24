@@ -1,20 +1,4 @@
-require "digest"
-require "base64"
 class UrlsController < ApplicationController
-  before_action :set_url, only: [:show]
-
-# def show
-
-# end
-
-# def new
-
-# end
-
-# def create
-
-# end
-
 
    def show
     @url = URL.find(params[:id].to_i(36)) #decode from base 36 to just show active record int
@@ -39,8 +23,6 @@ class UrlsController < ApplicationController
    
   def create
     @url= URL.new(long: params[:url][:long])#params short taken from the form
-# debugger
-    #run check if url exists already or should this already be done
 
     respond_to do |format|
       if @url.save
@@ -53,14 +35,4 @@ class UrlsController < ApplicationController
     end
   end
 
-  private
-    #Use callbacks to share common setup or constraints between actions.
-    def set_url
-      @url = URL.find(params[:id].to_i(36))
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def url_params
-      params.require(:long)
-    end
 end
