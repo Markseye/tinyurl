@@ -2,7 +2,7 @@
 
 <h3>Your URL was shortened</h3>
 
-<p>The new short URL is <%= link_to urls_path(@url.short), urls_path(@url.short) %>.</p>
+<p>The new short URL is <%= link_to @url.short, @url.long %>.</p>
 
 <p>The URL leads to <%= link_to @url.long, @url.long %>.</p>
 
