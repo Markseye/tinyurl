@@ -1,10 +1,10 @@
-<%= form_for(@long) do |f| %>
-  <% if @long.errors.any? %>
+<%= form_for(@url) do |f| %>
+  <% if @url.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@long.errors.count, "error") %> prohibited this short from being saved:</h2>
+      <h2><%= pluralize(@url.errors.count, "error") %> prohibited this url from being saved:</h2>
 
       <ul>
-      <% @long.errors.full_messages.each do |message| %>
+      <% @url.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label "Long URL" %><br>
-    <%= f.text_field :long %>
+    <%= f.text_field :long%>
   </div>
 
   <div class="actions">

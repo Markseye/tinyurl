@@ -1,5 +1,5 @@
 Tinyurl::Application.routes.draw do
-get '/:id(/:desc)' => 'shorts#show', :as => 'short'
-get '/' => 'shorts#new', :as => 'new_short'
-post '/' => 'shorts#create', :as => 'shorts'
+get '/:id(/:desc)' => 'urls#show', :as => ''
+get '/' => 'urls#new', :as => 'new_url'
+post '/' => 'urls#create', :as => 'urls'
 end
