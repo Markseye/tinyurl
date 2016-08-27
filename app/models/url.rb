@@ -1,14 +1,11 @@
-#next steps add if uniqueness is false, short the short url, validate url entered is good,
+#next steps add if uniqueness is false, short the short url,
 #add error handling, upgrade ui, add url correction as now only exact url enter will redirect so need to have corrections made basedo n user enter
 
 class URL < ActiveRecord::Base
 	attr_accessible :long, :short
-	validates :long, presence: true, uniqueness: true
+	validates :long, presence: true, uniqueness: true, format: {with: /\Ahttp:\/\/\S+\z/,
+	message: "Only HTTP links allowed!"} #No relative URLs, no file:// URLs, or even shell: URLs
 	#validates :short, uniqueness: true
-	#:format => {
-	#:with => %r{\Ahttp://\z},
-	#:message => "Only HTTP links allowed!", #No relative URLs, no file:// URLs, or even shell: URLs
-	#}
 	before_create :create_short
 
 	def create_short
