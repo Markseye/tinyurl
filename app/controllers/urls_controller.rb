@@ -20,9 +20,9 @@ class UrlsController < ApplicationController
 
   # POST /shorts
   # POST /shorts.json
-   
+
   def create
-    @url= URL.new(long: params[:url][:long])#params short taken from the form
+    @url= URL.find_or_create_by(long: params[:url][:long]) #checking if long has been shortened before
 
     respond_to do |format|
       if @url.save
