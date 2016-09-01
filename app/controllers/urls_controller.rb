@@ -18,9 +18,6 @@ class UrlsController < ApplicationController
     end
   end
 
-  # POST /shorts
-  # POST /shorts.json
-
   def create
     @url= URL.find_or_create_by(long: params[:url][:long]) #checking if long has been shortened before
 
